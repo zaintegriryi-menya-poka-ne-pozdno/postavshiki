@@ -21,28 +21,22 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         $("input[name='CFV[586113]']").parent().parent().css("display", "none");  // поставщик 1.1
         $("input[name='CFV[586115]']").parent().parent().css("display", "none");  // поставщик 1.2
         $("input[name='CFV[586117]']").parent().parent().css("display", "none");  // поставщик 1.3
-        $("input[name='CFV[586109][311965]'], [name='CFV[406249][211727]'], input[name='CFV[406249][211729]']").click(function(e){
-
-          //   // let multiselects = $(".linked-forms__group-wrapper > div > div > span").length;
-          //   // for(let i = 0; i < multiselects; i++) {
-          //   //   form_pay_parent = $($($(".linked-forms__group-wrapper > div > div > span"))[i]).parent();
-          // }
-          let pos1,pos11,pos112,pos1123;
-          let multiselects = $(".linked-forms__group-wrapper > div > div > span").length;
-          for(let i = 0; i < multiselects; i++) {
-            form_pay_parent = $($($(".linked-forms__group-wrapper > div > div > span"))[i]).parent();
-            // console.log(form_pay_parent.context.innerText);
-            if (form_pay_parent.context.innerText == "поставщик 1") {
-              pos1 = form_pay_parent.context;
-              console.log(pos1.innerText);
-            }
-            if (form_pay_parent.context.innerText == "поставщик 1.1")
-              pos11=form_pay_parent.context;
-            if (form_pay_parent.context.innerText == "поставщик 1.2")
-              pos112=form_pay_parent.context;
-            if (form_pay_parent.context.innerText == "поставщик 1.3")
-              pos1123=form_pay_parent.context;
+        let pos1,pos11,pos112,pos1123;
+        let multiselects = $(".linked-forms__group-wrapper > div > div > span").length;
+        for(let i = 0; i < multiselects; i++) {
+          form_pay_parent = $($($(".linked-forms__group-wrapper > div > div > span"))[i]).parent();
+          // console.log(form_pay_parent.context.innerText);
+          if (form_pay_parent.context.innerText == "поставщик 1") {
+            pos1 = form_pay_parent.context;
           }
+          if (form_pay_parent.context.innerText == "поставщик 1.1")
+            pos11=form_pay_parent.context;
+          if (form_pay_parent.context.innerText == "поставщик 1.2")
+            pos112=form_pay_parent.context;
+          if (form_pay_parent.context.innerText == "поставщик 1.3")
+            pos1123=form_pay_parent.context;
+        }
+        $("input[name='CFV[586109][311965]'], [name='CFV[406249][211727]'], input[name='CFV[406249][211729]']").click(function(e){
             if ($("input[name='CFV[586109][311965]']").prop("checked")) {
               $("input[name='CFV[586111]']").parent().parent().css("display", "flex");
               let button1 = document.createElement("div");
@@ -52,42 +46,36 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               button1.style = "border: 1px solid green; border-radius: 50%;width: 10px; height: 10px; margin-left: 45px;padding: 2px;text-align: center;font-size: 8.1pt;font-weight: bold; display: inline-block;";
               pos1.appendChild(button1);
               $("#button1").click(function () {
-                  console.log("1");
-                  console.log($("input[name='CFV[586113]']").parent().parent().css("display")+ "  + parent().parent().css(\"display\")");
-                  console.log($("input[name='CFV[586113]']").parent().css("display")+ "  + parent().css(\"display\")");
-                  console.log($("input[name='CFV[586113]']").css("display")+ "  + .css(\"display\")");
-                  if ($("input[name='CFV[586113]']").parent().parent().css("display") != "flex") {
-                    pos11.innerText = " ";
-                    $("input[name='CFV[586113]']").parent().parent().css("display", "flex");
-                    let button1minus = document.createElement("div");
-                    button1minus.id = "button1minus";
-                    const textminus = document.createTextNode("x");
-                    button1minus.appendChild(textminus);
-                    button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                    pos11.appendChild(button1minus);
-                  }
-                  else if ($("input[name='CFV[586115]']").parent().parent().css("display") != "flex") {
-                    console.log("2");
-                    pos112.innerText = " ";
-                    $("input[name='CFV[586115]']").parent().parent().css("display", "flex");
-                    let button1minus1 = document.createElement("div");
-                    button1minus1.id = "button1minus1";
-                    const textminus1 = document.createTextNode("x");
-                    button1minus1.appendChild(textminus1);
-                    button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                    pos112.appendChild(button1minus1);
-                  }
-                  else if ($("input[name='CFV[586117]']").parent().parent().css("display") != "flex") {
-                    pos1123.innerText = " ";
-                    $("input[name='CFV[586117]']").parent().parent().css("display", "flex");
-                    let button1minus2 = document.createElement("div");
-                    button1minus2.id = "button1minus2";
-                    const textminus2 = document.createTextNode("x");
-                    button1minus2.appendChild(textminus2);
-                    button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                    pos1123.appendChild(button1minus2);
-                  }
-
+                if ($("input[name='CFV[586113]']").parent().parent().css("display") != "flex") {
+                  pos11.innerText = " ";
+                  $("input[name='CFV[586113]']").parent().parent().css("display", "flex");
+                  let button1minus = document.createElement("div");
+                  button1minus.id = "button1minus";
+                  const textminus = document.createTextNode("x");
+                  button1minus.appendChild(textminus);
+                  button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                  pos11.appendChild(button1minus);
+                }
+                else if ($("input[name='CFV[586115]']").parent().parent().css("display") != "flex") {
+                  pos112.innerText = " ";
+                  $("input[name='CFV[586115]']").parent().parent().css("display", "flex");
+                  let button1minus1 = document.createElement("div");
+                  button1minus1.id = "button1minus1";
+                  const textminus1 = document.createTextNode("x");
+                  button1minus1.appendChild(textminus1);
+                  button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                  pos112.appendChild(button1minus1);
+                }
+                else if ($("input[name='CFV[586117]']").parent().parent().css("display") != "flex") {
+                  pos1123.innerText = " ";
+                  $("input[name='CFV[586117]']").parent().parent().css("display", "flex");
+                  let button1minus2 = document.createElement("div");
+                  button1minus2.id = "button1minus2";
+                  const textminus2 = document.createTextNode("x");
+                  button1minus2.appendChild(textminus2);
+                  button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                  pos1123.appendChild(button1minus2);
+                }
                 $("#button1minus").click(function () {
                   if ($("input[name='CFV[586113]']").css("display") == "inline-block") {
                     $("input[name='CFV[586113]']").parent().parent().css("display", "none");
@@ -105,69 +93,12 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
                 });
               });
             } else {
+              $("input[name='CFV[586111]']").parent().parent().css("display", "none");
               $("input[name='CFV[586113]']").parent().parent().css("display", "none");
               $("input[name='CFV[586115]']").parent().parent().css("display", "none");
               $("input[name='CFV[586117]']").parent().parent().css("display", "none");
             }
 
-              // if ($("input[name='CFV[406249][211727]']").prop("checked")) {
-              //   $("input[name='CFV[406253]']").parent().parent().css("display", "flex");
-              //   var div = document.getElementsByClassName("linked-form__field__label")[13];
-              //   var spans = div.getElementsByTagName("span");
-              //   if (spans[0].innerText == "поставщик 2") {
-              //     let button1 = document.createElement("div");
-              //     button1.id = "button1";
-              //     const text = document.createTextNode("+");
-              //     text.style = "padding: 20px;font-weight: bold;font-size: 11pt;";
-              //     button1.appendChild(text);
-              //     button1.style = "border: 1px solid green; border-radius: 50%;width: 10px; height: 10px; margin-left: 45px;padding: 2px;text-align: center;font-size: 8.1pt;font-weight: bold; display: inline-block;";
-              //     spans[0].appendChild(button1);
-              //     let i = 0;
-              //     $("#button1").click(function () {
-              //       if (i == 0) {
-              //         var div = document.getElementsByClassName("linked-form__field__label")[14];
-              //         var spans = div.getElementsByTagName("span");
-              //         spans[0].innerText = " ";
-              //         $("input[name='CFV[415233]']").parent().parent().css("display", "flex");
-              //         let button1minus = document.createElement("div");
-              //         button1minus.id = "button1minus";
-              //         const textminus = document.createTextNode("x");
-              //         button1minus.appendChild(textminus);
-              //         button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-              //         spans[0].appendChild(button1minus);
-              //         $("#button1minus").click(function () {
-              //           $("input[name='CFV[415233]']").parent().parent().css("display", "none");
-              //           i = i - 1;
-              //         });
-              //       }
-              //       if (i == 1) {
-              //         var div = document.getElementsByClassName("linked-form__field__label")[15];
-              //         var spans = div.getElementsByTagName("span");
-              //         spans[0].innerText = " ";
-              //         $("input[name='CFV[415235]']").parent().parent().css("display", "flex");
-              //         let button1minus1 = document.createElement("div");
-              //         button1minus1.id = "button1minus1";
-              //         const textminus = document.createTextNode("x");
-              //         button1minus1.appendChild(textminus);
-              //         button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-              //         spans[0].appendChild(button1minus1);
-              //         $("#button1minus1").click(function () {
-              //           $("input[name='CFV[415235]']").parent().parent().css("display", "none");
-              //           i = i - 1;
-              //         });
-              //       }
-              //       if (i <= 1) {
-              //         i = i + 1;
-              //       }
-              //
-              //     });
-              //
-              //   }
-              // } else {
-              //   $("input[name='CFV[406253]']").parent().parent().css("display", "none");
-              //   $("input[name='CFV[415233]']").parent().parent().css("display", "none");
-              //   $("input[name='CFV[415235]']").parent().parent().css("display", "none");
-              // }
               if ($("input[name='CFV[406249][211729]']").prop("checked")) {
                 $("input[name='CFV[406255]']").parent().parent().css("display", "flex");
               } else {
@@ -176,33 +107,97 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
 
 
         });
-
-
-        // var div = document.getElementsByClassName("linked-form__field__label")[11];
-        // var spans = div.getElementsByTagName("span");
+        // if ($("input[name='CFV[586109][311965]']").prop("checked")) {
+        //   if ($("input[name='CFV[586111]']").val() != " " || $("input[name='CFV[586111]']").val() != "0") {
+        //     $("input[name='CFV[586111]']").parent().parent().css("display", "flex");
+        //     let button1 = document.createElement("div");
+        //     button1.id = "button1";
+        //     const text = document.createTextNode("+");
+        //     button1.appendChild(text);
+        //     button1.style = "border: 1px solid green; border-radius: 50%;width: 10px; height: 10px; margin-left: 45px;padding: 2px;text-align: center;font-size: 8.1pt;font-weight: bold; display: inline-block;";
+        //     pos1.appendChild(button1);
+        //     if ($("input[name='CFV[586113]']").val() != " " || $("input[name='CFV[586113]']").val() != "0") {
+        //       pos11.innerText = " ";
+        //       $("input[name='CFV[586113]']").parent().parent().css("display", "flex");
+        //       let button1minus = document.createElement("div");
+        //       button1minus.id = "button1minus";
+        //       const textminus = document.createTextNode("x");
+        //       button1minus.appendChild(textminus);
+        //       button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+        //       pos11.appendChild(button1minus);
         //
-        // for(i=0;i<spans.length;i++)
-        // {
-        //   if (spans[i].innerText == "поставщик 2"){
-        //     alert(spans[i].innerText + " Это innerText");
-        //     spans[i].innerText = " ";
+        //     }
+        //     if ($("input[name='CFV[586113]']").val() != " " || $("input[name='CFV[586113]']").val() != "0") {
+        //       pos112.innerText = " ";
+        //       $("input[name='CFV[586115]']").parent().parent().css("display", "flex");
+        //       let button1minus1 = document.createElement("div");
+        //       button1minus1.id = "button1minus1";
+        //       const textminus1 = document.createTextNode("x");
+        //       button1minus1.appendChild(textminus1);
+        //       button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+        //       pos112.appendChild(button1minus1);
+        //     }
+        //     if ($("input[name='CFV[586117]']").val() != " " || $("input[name='CFV[586113]']").val() != "0") {
+        //       pos1123.innerText = " ";
+        //       $("input[name='CFV[586117]']").parent().parent().css("display", "flex");
+        //       let button1minus2 = document.createElement("div");
+        //       button1minus2.id = "button1minus2";
+        //       const textminus2 = document.createTextNode("x");
+        //       button1minus2.appendChild(textminus2);
+        //       button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+        //       pos1123.appendChild(button1minus2);
+        //     }
         //   }
-        //   if (spans[i].innerHTML == "поставщик 2"){
-        //     alert(spans[i].innerHTML + " Это innerHTML");
-        //     spans[i].css("visibility", "hidden");
-        //   }
-        //   if (spans[i].textContent == "поставщик 2"){
-        //     alert(spans[i].textContent + " Это textContent");
-        //     spans[i].css("visibility", "hidden");
-        //   }
+          // $("#button1").click(function () {
+          //   if ($("input[name='CFV[586113]']").parent().parent().css("display") != "flex") {
+          //     pos11.innerText = " ";
+          //     $("input[name='CFV[586113]']").parent().parent().css("display", "flex");
+          //     let button1minus = document.createElement("div");
+          //     button1minus.id = "button1minus";
+          //     const textminus = document.createTextNode("x");
+          //     button1minus.appendChild(textminus);
+          //     button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+          //     pos11.appendChild(button1minus);
+          //   } else if ($("input[name='CFV[586115]']").parent().parent().css("display") != "flex") {
+          //     console.log("2");
+          //     pos112.innerText = " ";
+          //     $("input[name='CFV[586115]']").parent().parent().css("display", "flex");
+          //     let button1minus1 = document.createElement("div");
+          //     button1minus1.id = "button1minus1";
+          //     const textminus1 = document.createTextNode("x");
+          //     button1minus1.appendChild(textminus1);
+          //     button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+          //     pos112.appendChild(button1minus1);
+          //   } else if ($("input[name='CFV[586117]']").parent().parent().css("display") != "flex") {
+          //     pos1123.innerText = " ";
+          //     $("input[name='CFV[586117]']").parent().parent().css("display", "flex");
+          //     let button1minus2 = document.createElement("div");
+          //     button1minus2.id = "button1minus2";
+          //     const textminus2 = document.createTextNode("x");
+          //     button1minus2.appendChild(textminus2);
+          //     button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+          //     pos1123.appendChild(button1minus2);
+          //   }
+          //   $("#button1minus").click(function () {
+          //     if ($("input[name='CFV[586113]']").css("display") == "inline-block") {
+          //       $("input[name='CFV[586113]']").parent().parent().css("display", "none");
+          //     }
+          //   });
+          //   $("#button1minus1").click(function () {
+          //     if ($("input[name='CFV[586115]']").css("display") == "inline-block") {
+          //       $("input[name='CFV[586115]']").parent().parent().css("display", "none");
+          //     }
+          //   });
+          //   $("#button1minus2").click(function () {
+          //     if ($("input[name='CFV[586117]']").css("display") == "inline-block") {
+          //       $("input[name='CFV[586117]']").parent().parent().css("display", "none");
+          //     }
+          //   });
+          // });
 
-
-
-        // if (spans[i].innerHTML == "поставщик 2"){
-        //   spans.css("visibility", "hidden");
-        //   alert(spans[i].innerHTML);
         // }
-        //([...document.querySelectorAll('#test span')]).map(x => console.log(x.innerHTML))
+
+
 
 
         return true;
