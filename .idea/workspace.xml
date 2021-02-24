@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2f377c7-6d26-4652-9d74-fa8a06c4e6bd" name="Default Changelist" comment="" />
+    <list default="true" id="b2f377c7-6d26-4652-9d74-fa8a06c4e6bd" name="Default Changelist" comment="Поля счета поставщиков">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defold.zip" beforeDir="false" afterPath="$PROJECT_DIR$/defold.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_widget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,11 +70,24 @@
       <workItem from="1613639082524" duration="2034000" />
       <workItem from="1613709634171" duration="9016000" />
       <workItem from="1613719648532" duration="12484000" />
-      <workItem from="1613786332848" duration="29371000" />
+      <workItem from="1613786332848" duration="30737000" />
+      <workItem from="1614133033291" duration="5135000" />
     </task>
+    <task id="LOCAL-00001" summary="Поля счета поставщиков">
+      <created>1613817066481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613817066481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Поля счета поставщиков" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поля счета поставщиков" />
   </component>
 </project>

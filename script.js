@@ -17,11 +17,11 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         $("input[name='CFV[406251]']").parent().parent().css("display", "none");
         $("input[name='CFV[406253]']").parent().parent().css("display", "none");
         $("input[name='CFV[406255]']").parent().parent().css("display", "none");
-        $("input[name='CFV[415227]']").parent().parent().css("display", "none");  // поставщик 1.1
-        $("input[name='CFV[415231]']").parent().parent().css("display", "none");  // поставщик 1.2
-        $("input[name='CFV[415233]']").parent().parent().css("display", "none");  // поставщик 2.1
-        $("input[name='CFV[415235]']").parent().parent().css("display", "none");  // поставщик 2.2
-        $("input[name='CFV[406249][211725]'], [name='CFV[406249][211727]'], input[name='CFV[406249][211729]']").click(function(e){
+        $("input[name='CFV[586111]']").parent().parent().css("display", "none");  // поставщик 1
+        $("input[name='CFV[586113]']").parent().parent().css("display", "none");  // поставщик 1.1
+        $("input[name='CFV[586115]']").parent().parent().css("display", "none");  // поставщик 1.2
+        $("input[name='CFV[586117]']").parent().parent().css("display", "none");  // поставщик 1.3
+        $("input[name='CFV[586109][311965]'], [name='CFV[406249][211727]'], input[name='CFV[406249][211729]']").click(function(e){
 
           //   // let multiselects = $(".linked-forms__group-wrapper > div > div > span").length;
           //   // for(let i = 0; i < multiselects; i++) {
@@ -40,11 +40,11 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               pos11=form_pay_parent.context;
             if (form_pay_parent.context.innerText == "поставщик 1.2")
               pos112=form_pay_parent.context;
-            if (form_pay_parent.context.innerText == "поставщик 2.1")
+            if (form_pay_parent.context.innerText == "поставщик 1.3")
               pos1123=form_pay_parent.context;
           }
-            if ($("input[name='CFV[406249][211725]']").prop("checked")) {
-              $("input[name='CFV[406251]']").parent().parent().css("display", "flex");
+            if ($("input[name='CFV[586109][311965]']").prop("checked")) {
+              $("input[name='CFV[586111]']").parent().parent().css("display", "flex");
               let button1 = document.createElement("div");
               button1.id = "button1";
               const text = document.createTextNode("+");
@@ -52,57 +52,62 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
               button1.style = "border: 1px solid green; border-radius: 50%;width: 10px; height: 10px; margin-left: 45px;padding: 2px;text-align: center;font-size: 8.1pt;font-weight: bold; display: inline-block;";
               pos1.appendChild(button1);
               $("#button1").click(function () {
-                if ($("input[name='CFV[415227]']").parent().parent().css("display") != "inline-block") {
-                  pos11.innerText = " ";
-                  $("input[name='CFV[415227]']").parent().parent().css("display", "flex");
-                  let button1minus = document.createElement("div");
-                  button1minus.id = "button1minus";
-                  const textminus = document.createTextNode("x");
-                  button1minus.appendChild(textminus);
-                  button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                  pos11.appendChild(button1minus);
-                }
-                $("#button1minus").click(function () {
-                  if ($("input[name='CFV[415227]']").css("display") == "inline-block") {
-                    $("input[name='CFV[415227]']").parent().parent().css("display", "none");
+                  console.log("1");
+                  console.log($("input[name='CFV[586113]']").parent().parent().css("display")+ "  + parent().parent().css(\"display\")");
+                  console.log($("input[name='CFV[586113]']").parent().css("display")+ "  + parent().css(\"display\")");
+                  console.log($("input[name='CFV[586113]']").css("display")+ "  + .css(\"display\")");
+                  if ($("input[name='CFV[586113]']").parent().parent().css("display") != "flex") {
+                    pos11.innerText = " ";
+                    $("input[name='CFV[586113]']").parent().parent().css("display", "flex");
+                    let button1minus = document.createElement("div");
+                    button1minus.id = "button1minus";
+                    const textminus = document.createTextNode("x");
+                    button1minus.appendChild(textminus);
+                    button1minus.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                    pos11.appendChild(button1minus);
                   }
-                });
-                if ($("input[name='CFV[415231]']").parent().parent().css("display") != "inline-block") {
-                  pos112.innerText = " ";
-                  $("input[name='CFV[415231]']").parent().parent().css("display", "flex");
-                  let button1minus1 = document.createElement("div");
-                  button1minus1.id = "button1minus1";
-                  const textminus1 = document.createTextNode("x");
-                  button1minus1.appendChild(textminus1);
-                  button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                  pos112.appendChild(button1minus1);
-                }
-                $("#button1minus1").click(function () {
-                  if ($("input[name='CFV[415231]']").css("display") == "inline-block") {
-                    $("input[name='CFV[415231]']").parent().parent().css("display", "none");
+                  else if ($("input[name='CFV[586115]']").parent().parent().css("display") != "flex") {
+                    console.log("2");
+                    pos112.innerText = " ";
+                    $("input[name='CFV[586115]']").parent().parent().css("display", "flex");
+                    let button1minus1 = document.createElement("div");
+                    button1minus1.id = "button1minus1";
+                    const textminus1 = document.createTextNode("x");
+                    button1minus1.appendChild(textminus1);
+                    button1minus1.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                    pos112.appendChild(button1minus1);
                   }
-                });
-                if ($("input[name='CFV[415233]']").parent().parent().css("display") != "inline-block") {
-                  pos1123.innerText = " ";
-                  $("input[name='CFV[415233]']").parent().parent().css("display", "flex");
-                  let button1minus2 = document.createElement("div");
-                  button1minus2.id = "button1minus2";
-                  const textminus2 = document.createTextNode("x");
-                  button1minus2.appendChild(textminus2);
-                  button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
-                  pos1123.appendChild(button1minus2);
-                }
-                $("#button1minus2").click(function () {
-                  if ($("input[name='CFV[415233]']").css("display") == "inline-block") {
-                    $("input[name='CFV[415233]']").parent().parent().css("display", "none");
+                  else if ($("input[name='CFV[586117]']").parent().parent().css("display") != "flex") {
+                    pos1123.innerText = " ";
+                    $("input[name='CFV[586117]']").parent().parent().css("display", "flex");
+                    let button1minus2 = document.createElement("div");
+                    button1minus2.id = "button1minus2";
+                    const textminus2 = document.createTextNode("x");
+                    button1minus2.appendChild(textminus2);
+                    button1minus2.style = "border: 1px solid red; border-radius: 50%;width: 10px; height: 10px; margin-left: 127px;font-size: 7.4pt;padding: 2px;text-align: center;font-weight: bold; display: inline-block;";
+                    pos1123.appendChild(button1minus2);
                   }
-                });
 
+                $("#button1minus").click(function () {
+                  if ($("input[name='CFV[586113]']").css("display") == "inline-block") {
+                    $("input[name='CFV[586113]']").parent().parent().css("display", "none");
+                  }
+                });
+                $("#button1minus1").click(function () {
+                  if ($("input[name='CFV[586115]']").css("display") == "inline-block") {
+                    $("input[name='CFV[586115]']").parent().parent().css("display", "none");
+                  }
+                });
+                $("#button1minus2").click(function () {
+                  if ($("input[name='CFV[586117]']").css("display") == "inline-block") {
+                    $("input[name='CFV[586117]']").parent().parent().css("display", "none");
+                  }
+                });
               });
             } else {
-              $("input[name='CFV[406251]']").parent().parent().css("display", "none");
-              $("input[name='CFV[415227]']").parent().parent().css("display", "none");
-              $("input[name='CFV[415231]']").parent().parent().css("display", "none");
+              $("input[name='CFV[586113]']").parent().parent().css("display", "none");
+              $("input[name='CFV[586115]']").parent().parent().css("display", "none");
+              $("input[name='CFV[586117]']").parent().parent().css("display", "none");
             }
 
               // if ($("input[name='CFV[406249][211727]']").prop("checked")) {
