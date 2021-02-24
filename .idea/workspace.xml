@@ -42,6 +42,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -69,7 +70,7 @@
       <workItem from="1613709634171" duration="9016000" />
       <workItem from="1613719648532" duration="12484000" />
       <workItem from="1613786332848" duration="30737000" />
-      <workItem from="1614133033291" duration="10681000" />
+      <workItem from="1614133033291" duration="29656000" />
     </task>
     <task id="LOCAL-00001" summary="Поля счета поставщиков">
       <created>1613817066481</created>
@@ -85,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614138432738</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Поля счета поставщиков&#10;+ и - полностью рабочая">
+      <created>1614143839178</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614143839178</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
